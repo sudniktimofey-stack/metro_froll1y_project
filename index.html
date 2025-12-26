@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Metrostroi Froll1y Project</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #1a1a1a; 
+            color: white;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .server-name {
+            font-size: 50px;
+            font-weight: bold;
+            color: #ffcc00; /* Золотистый цвет для названия */
+            text-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
+            margin-bottom: 10px;
+        }
+
+        .welcome-text {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        /* Поезд 81-717 */
+        .train {
+            position: absolute;
+            bottom: 160px;
+            width: 320px;
+            height: 90px;
+            background: #0055a4; 
+            border: 3px solid #ffffff;
+            border-radius: 4px;
+            animation: moveTrain 6s linear infinite;
+        }
+
+        /* Белая полоса */
+        .train::before {
+            content: '';
+            position: absolute;
+            top: 45px;
+            width: 100%;
+            height: 8px;
+            background: white;
+        }
+
+        @keyframes moveTrain {
+            from { left: -400px; }
+            to { left: 100%; }
+        }
+
+        .rails {
+            position: absolute;
+            bottom: 155px;
+            width: 100%;
+            height: 6px;
+            background: #444;
+        }
+
+        #status {
+            position: absolute;
+            bottom: 40px;
+            font-size: 18px;
+            color: #aaa;
+        }
+
+        .wish {
+            position: absolute;
+            bottom: 80px;
+            font-size: 20px;
+            font-style: italic;
+            color: #00ffcc; /* Бирюзовый для пожелания */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="server-name">METROSTROI FROLL1Y PROJECT</div>
+    <div class="welcome-text">Добро пожаловать на наш сервер!</div>
+
+    <div class="rails"></div>
+    <div class="train"></div>
+
+    <div class="wish">Желаем вам удачной игры! 🎮</div>
+    <div id="status">Подключение к системе...</div>
+
+    <script type="text/javascript">
+        function SetStatusChanged(status) {
+            document.getElementById('status').innerHTML = status;
+        }
+    </script>
+
+</body>
+</html>
